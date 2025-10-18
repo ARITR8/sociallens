@@ -14,10 +14,15 @@
 
 **🚀 [Test SocialLens Now](https://sociallens-demo.s3-website-us-east-1.amazonaws.com)**
 
-### Current Reddit Integration - Test Scenarios:
+### Currently Demo-Ready - Reddit Chat Integration:
 - **"Show me hot posts from r/programming"**
 - **"Summarize the top post from r/MachineLearning"** 
 - **"Compare posts from r/webdev and r/programming"**
+
+### Deployed & In Development:
+- **Summarizer Service** - AI-powered content summarization (deployed, testing)
+- **Publisher Service** - WordPress integration for content publishing (deployed, testing)
+- **Data Service** - Database management and analytics (deployed, testing)
 
 ### Future Multi-Platform Scenarios (Roadmap):
 - **"Show me trending AI discussions across Reddit, X, and Quora"**
@@ -46,8 +51,8 @@ graph TB
     end
     
     subgraph "AI & ML Services"
-        G["AWS Bedrock Agent<br/>Claude 3.5 Sonnet<br/>Natural Language Processing"]
-        H["Hugging Face API<br/>Transformers Models<br/>Text Summarization"]
+        G["AWS Bedrock Nova Micro<br/>Latest AI Model<br/>Natural Language Processing"]
+        H["Hugging Face API<br/>Transformers Models<br/>Text Summarization (Ready)"]
     end
     
     subgraph "Data Layer"
@@ -97,8 +102,8 @@ graph TB
 ### **Backend Services**
 - **AWS Lambda** (Python 3.11) - Serverless compute
 - **API Gateway** - RESTful API with CORS and rate limiting
-- **AWS Bedrock** - Claude 3.5 Sonnet for AI processing
-- **Hugging Face Transformers** - Text summarization models
+- **AWS Bedrock Nova Micro** - Latest AI model for intelligent processing
+- **Hugging Face Transformers** - Text summarization models (implemented, ready for deployment)
 
 ### **Data & Storage**
 - **RDS PostgreSQL 16** - Multi-AZ deployment with automated backups
@@ -199,7 +204,7 @@ sociallens/
 - **Fallback Mechanisms** - Graceful handling of authentication failures
 
 ### **🤖 Advanced AI Integration**
-- **AWS Bedrock Claude 3.5 Sonnet** - State-of-the-art language model
+- **AWS Bedrock Nova Micro** - Latest cutting-edge AI model for superior performance
 - **Hybrid AI Architecture** - Combines structured data with natural language processing
 - **Context-Aware Responses** - Maintains conversation context across interactions
 - **Multi-Modal Processing** - Handles text, links, and metadata intelligently
@@ -244,16 +249,16 @@ curl -X POST "https://api.newsettler.com/chat" \
 ## 🚀 Deployment Architecture
 
 ### **AWS Services Used**
-| Service | Purpose | Configuration |
-|---------|---------|---------------|
-| **S3** | Static website hosting | Public read access, CloudFront CDN |
-| **Lambda** | Serverless compute | Python 3.11, 512MB-2GB memory |
-| **API Gateway** | REST API management | CORS enabled, rate limiting |
-| **RDS PostgreSQL** | Primary database | db.t4g.micro, Multi-AZ |
-| **Redis** | Caching layer | In-memory session storage |
-| **Bedrock** | AI/ML services | Claude 3.5 Sonnet model |
-| **VPC** | Network isolation | Public/private subnets |
-| **NAT Gateway** | Outbound internet | For Lambda functions |
+| Service | Purpose | Configuration | Status |
+|---------|---------|---------------|---------|
+| **S3** | Static website hosting | Public read access, CloudFront CDN | ✅ Active |
+| **Lambda** | Serverless compute | Python 3.11, 512MB-2GB memory | ✅ Active |
+| **API Gateway** | REST API management | CORS enabled, rate limiting | ✅ Active |
+| **RDS PostgreSQL** | Primary database | db.t4g.micro, Multi-AZ | ✅ Active |
+| **Redis** | Caching layer | In-memory session storage | ✅ Deployed |
+| **Bedrock Nova Micro** | AI/ML services | Latest AI model | ✅ Active |
+| **VPC** | Network isolation | Public/private subnets | ✅ Active |
+| **NAT Gateway** | Outbound internet | For Lambda functions | ✅ Active |
 
 ### **Infrastructure as Code**
 ```bash
@@ -413,6 +418,7 @@ BEDROCK_AGENT_ID=your_agent_id
 | Cache Hit Rate | > 80% | 87% | ✅ Unified caching strategy |
 | Lambda Cold Start | < 1s | 0.8s | ✅ Optimized for all APIs |
 | Platform Integration | 1 (Reddit) | 1 (Reddit) | 🚀 4+ platforms planned |
+| Service Deployment | 4 services | 4 deployed | 🔄 3 services in testing phase |
 
 ---
 
@@ -420,23 +426,29 @@ BEDROCK_AGENT_ID=your_agent_id
 
 ### **Phase 1: Current (Reddit Integration)**
 - ✅ Reddit API integration with OAuth2
-- ✅ AI-powered content summarization
+- ✅ Chat endpoint with Bedrock Nova Micro integration
 - ✅ Real-time post fetching and analysis
-- ✅ Bedrock Agent integration
+- ✅ Automatic token refresh and error handling
 
-### **Phase 2: Multi-Platform Expansion (Q2 2024)**
+### **Phase 2: Service Testing & Optimization (Q2 2024)**
+- 🔄 Test and optimize Summarizer Service (deployed)
+- 🔄 Test and optimize Publisher Service (deployed)
+- 🔄 Test and optimize Data Service (deployed)
+- 🔄 Full API endpoint activation and demo readiness
+
+### **Phase 3: Multi-Platform Expansion (Q3 2024)**
 - 🔄 X (Twitter) API integration
 - 🔄 Quora content aggregation
 - 🔄 Cross-platform trend analysis
 - 🔄 Unified authentication system
 
-### **Phase 3: Advanced Features (Q3 2024)**
+### **Phase 4: Advanced Features (Q4 2024)**
 - 🔄 Facebook Graph API integration
 - 🔄 LinkedIn content monitoring
 - 🔄 YouTube comment analysis
 - 🔄 Real-time alerts and notifications
 
-### **Phase 4: Enterprise Features (Q4 2024)**
+### **Phase 5: Enterprise Features (Q1 2025)**
 - 🔄 Advanced analytics dashboard
 - 🔄 Custom brand monitoring
 - 🔄 API rate limit optimization
