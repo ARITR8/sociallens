@@ -31,35 +31,35 @@
 ```mermaid
 graph TB
     subgraph "Frontend Layer"
-        A[S3 Static Website<br/>React Frontend<br/>CloudFront CDN]
+        A["S3 Static Website<br/>React Frontend<br/>CloudFront CDN"]
     end
     
     subgraph "API Gateway Layer"
-        B[API Gateway<br/>CORS & Rate Limiting<br/>Request/Response Transformation]
+        B["API Gateway<br/>CORS & Rate Limiting<br/>Request/Response Transformation"]
     end
     
     subgraph "Lambda Functions"
-        C[Reddit Action Service<br/>Bedrock Agent Integration<br/>Claude 3.5 Sonnet]
-        D[Reddit Fetcher Service<br/>OAuth2 Token Management<br/>Rate Limit Handling]
-        E[Summarizer Service<br/>Hugging Face Integration<br/>Content Processing]
-        F[Public Proxy Service<br/>External API Gateway<br/>CORS Management]
+        C["Reddit Action Service<br/>Bedrock Agent Integration<br/>Claude 3.5 Sonnet"]
+        D["Reddit Fetcher Service<br/>OAuth2 Token Management<br/>Rate Limit Handling"]
+        E["Summarizer Service<br/>Hugging Face Integration<br/>Content Processing"]
+        F["Public Proxy Service<br/>External API Gateway<br/>CORS Management"]
     end
     
     subgraph "AI & ML Services"
-        G[AWS Bedrock Agent<br/>Claude 3.5 Sonnet<br/>Natural Language Processing]
-        H[Hugging Face API<br/>Transformers Models<br/>Text Summarization]
+        G["AWS Bedrock Agent<br/>Claude 3.5 Sonnet<br/>Natural Language Processing"]
+        H["Hugging Face API<br/>Transformers Models<br/>Text Summarization"]
     end
     
     subgraph "Data Layer"
-        I[RDS PostgreSQL<br/>Multi-AZ Deployment<br/>Automated Backups]
-        J[Redis Cache<br/>Session Management<br/>API Response Caching]
+        I["RDS PostgreSQL<br/>Multi-AZ Deployment<br/>Automated Backups"]
+        J["Redis Cache<br/>Session Management<br/>API Response Caching"]
     end
     
-    subgraph "External APIs (Current & Future)"
-        K[Reddit API v1<br/>OAuth2 Authentication<br/>Rate Limit: 60/min]
-        L[X (Twitter) API<br/>OAuth2 Authentication<br/>Rate Limit: 300/15min]
-        M[Quora API<br/>Content Aggregation<br/>Rate Limit: TBD]
-        N[Facebook Graph API<br/>Page Content<br/>Rate Limit: 200/hour]
+    subgraph "External APIs Current & Future"
+        K["Reddit API v1<br/>OAuth2 Authentication<br/>Rate Limit: 60/min"]
+        L["X Twitter API<br/>OAuth2 Authentication<br/>Rate Limit: 300/15min"]
+        M["Quora API<br/>Content Aggregation<br/>Rate Limit: TBD"]
+        N["Facebook Graph API<br/>Page Content<br/>Rate Limit: 200/hour"]
     end
     
     A -->|HTTPS| B
