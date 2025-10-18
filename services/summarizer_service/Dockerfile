@@ -1,0 +1,30 @@
+# === AWS Lambda Python base image ===
+FROM public.ecr.aws/lambda/python:3.10
+
+# Set working directory in Lambda
+WORKDIR /var/task
+
+# Copy requirements file
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Install additional Lambda-specific dependencies
+RUN pip install --no-cache-dir \
+    mangum \
+    aws-lambda-powertools
+
+# Copy application code
+COPY app ./app
+
+# Set Python path to include app directory
+ENV PYTHONPATH=/var/task
+
+# Set environment variables for better error reporting
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# Lambda handler configuration
+ENTRYPOINT [ "/lambda-entrypoint.sh" ]
+CMD ["app.lambda_app.handler"]

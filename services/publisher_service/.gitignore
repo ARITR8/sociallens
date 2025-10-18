@@ -1,0 +1,48 @@
+# Service Configuration
+SERVICE_NAME=publisher_service
+LOG_LEVEL=INFO
+ENABLE_METRICS=true
+
+# Database Settings
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=newsettler
+POSTGRES_USER=newsettler_user
+POSTGRES_PASSWORD=newsettler_pass
+POSTGRES_SCHEMA=publisher
+
+# API Settings
+API_V1_STR=/api/v1
+CORS_ORIGINS=["*"]  # For development; restrict in production
+
+# WordPress Settings
+WP_API_URL=https://industechie.com/wp-json/wp/v2
+WP_USERNAME=your_wordpress_username
+WP_APP_PASSWORD=your_wordpress_app_password  # Generate from WordPress admin
+WP_CATEGORY_ID=1  # NewsSettler category ID in WordPress
+
+# LLM Settings (OpenAI)
+OPENAI_API_KEY=your_openai_api_key
+LLM_MODEL=gpt-4-turbo-preview
+LLM_TEMPERATURE=0.7
+
+# Article Generation Settings
+ARTICLE_MIN_LENGTH=800
+ARTICLE_MAX_LENGTH=2000
+ARTICLE_STYLE=india_today
+SEO_DESCRIPTION_LENGTH=160
+MAX_RETRIES=3
+RETRY_DELAY=60
+
+# Docker Settings
+DOCKER_NETWORK_NAME=newsettler_network
+DOCKER_DB_PORT=5434  # Different from other services
+DOCKER_API_PORT=8002  # Different from other services
+
+# Monitoring Settings
+PROMETHEUS_METRICS=true
+METRICS_PORT=9002  # Different from other services
+
+# Development Settings
+DEBUG=true  # Set to false in production
+RELOAD=true  # Set to false in production

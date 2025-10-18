@@ -1,0 +1,1 @@
+{"messageVersion": "1.0", "response": {"action": "GetRedditPosts", "type": "SUCCESS", "body": "Reddit API returned status 500 for r/Python.", "sessionState": {"sessionAttributes": {}, "promptSessionAttributes": {}}}}

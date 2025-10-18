@@ -1,0 +1,1 @@
+{"statusCode": 200, "body": "{\"status\":\"healthy\",\"database\":\"connected\",\"environment\":\"production\",\"function_name\":\"data-service-lambda\",\"version\":\"1.0.0\"}", "headers": {"content-length": "126", "content-type": "application/json"}, "isBase64Encoded": false}

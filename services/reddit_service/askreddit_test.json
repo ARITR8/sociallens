@@ -1,0 +1,1 @@
+{"statusCode": 502, "body": "{\"detail\":\"Failed to fetch from Reddit: Subreddit r/AskReddit does not exist\"}", "headers": {"content-length": "78", "content-type": "application/json", "x-correlation-id": "9137b234-349e-4230-93b8-5f03b65ecd99"}, "isBase64Encoded": false}

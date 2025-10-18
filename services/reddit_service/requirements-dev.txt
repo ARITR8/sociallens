@@ -1,0 +1,10 @@
+# requirements-dev.txt
+-r requirements.txt
+
+# Development tools
+pre-commit>=3.5.0
+pytest-watch>=4.2.0
+pytest-mock>=3.12.0
+pytest-env>=1.0.1
+pytest-sugar>=0.9.7
+debugpy>=1.8.0  # For debugging

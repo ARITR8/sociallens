@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Reddit Chat Bot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Reddit Chat Bot</h1>
+
+        <!-- Login Form -->
+        <div id="loginForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <button onclick="startChat()">Start Chat</button>
+        </div>
+
+        <!-- Chat Window -->
+        <div id="chatWindow" style="display:none;">
+            <div id="messages"></div>
+            <input type="text" id="userInput" placeholder="Ask about Reddit posts...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

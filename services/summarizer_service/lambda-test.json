@@ -1,0 +1,29 @@
+{
+    "version": "2.0",
+    "routeKey": "$default",
+    "rawPath": "/health",
+    "rawQueryString": "",
+    "headers": {
+        "accept": "*/*",
+        "host": "lambda-url"
+    },
+    "requestContext": {
+        "accountId": "123456789012",
+        "apiId": "lambda-url",
+        "domainName": "lambda-url",
+        "domainPrefix": "lambda-url",
+        "http": {
+            "method": "GET",
+            "path": "/health",
+            "protocol": "HTTP/1.1",
+            "sourceIp": "127.0.0.1",
+            "userAgent": "custom"
+        },
+        "requestId": "id",
+        "routeKey": "$default",
+        "stage": "$default",
+        "time": "12/Mar/2024:12:00:00 +0000",
+        "timeEpoch": 1615550400000
+    },
+    "isBase64Encoded": false
+}

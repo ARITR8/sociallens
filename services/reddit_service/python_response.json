@@ -1,0 +1,1 @@
+{"statusCode": 502, "body": "{\"detail\":\"Failed to fetch from Reddit: Subreddit r/Python does not exist\"}", "headers": {"content-length": "75", "content-type": "application/json", "x-correlation-id": "6a92b236-40f7-4e81-9248-9125bbaac0c5"}, "isBase64Encoded": false}

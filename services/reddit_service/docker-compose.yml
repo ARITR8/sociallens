@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: reddit_service
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    networks:
+      - newsettler_network
+    volumes:
+      - .:/app
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
+  pgadmin:
+    image: dpage/pgadmin4:7.6
+    container_name: newsettler_pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_CONFIG_SERVER_MODE: 'False'
+    ports:
+      - "5050:80"
+    networks:
+      - newsettler_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: newsettler_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - newsettler_network
+
+volumes:
+  redis_data:
+
+networks:
+  newsettler_network:
+    driver: bridge

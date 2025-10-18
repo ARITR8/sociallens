@@ -1,0 +1,57 @@
+# # services/reddit_service/Dockerfile
+# FROM python:3.10-slim
+
+# # Set working directory
+# WORKDIR /app
+
+# # Set environment variables
+# ENV PYTHONDONTWRITEBYTECODE=1 \
+#     PYTHONUNBUFFERED=1 \
+#     PYTHONPATH=/app
+
+# # Install system dependencies
+# RUN apt-get update && apt-get install -y \
+#     gcc \
+#     postgresql-client \
+#     && rm -rf /var/lib/apt/lists/*
+
+# # Install Python dependencies
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir -r requirements.txt
+
+# # Copy application code
+# COPY . .
+
+# # Expose port
+# EXPOSE 8000
+
+# # Run the application
+# CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# Use AWS Lambda Python runtime base image
+FROM public.ecr.aws/lambda/python:3.10
+
+# Set working directory
+WORKDIR /var/task
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Copy dependencies file
+COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy ONLY application folder
+COPY app ./app
+
+# ✅ Include Mangum to adapt FastAPI to Lambda
+RUN pip install mangum
+
+# ✅ Correct Lambda handler (FASTAPI + Mangum)
+ENTRYPOINT [ "/lambda-entrypoint.sh" ]
+CMD [ "app.main.handler" ]
+
+
+
+

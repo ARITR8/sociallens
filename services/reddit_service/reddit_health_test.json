@@ -1,0 +1,1 @@
+{"statusCode": 200, "headers": {"content-length": "47", "content-type": "application/json", "x-correlation-id": "4f8663cc-b4cb-4a85-9b0e-9df5b52f030d"}, "multiValueHeaders": {}, "body": "{\"status\":\"healthy\",\"service\":\"reddit-fetcher\"}", "isBase64Encoded": false}

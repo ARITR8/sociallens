@@ -1,0 +1,1 @@
+{"version": "2.0", "routeKey": "GET /health", "rawPath": "/health", "rawQueryString": "", "headers": {"content-type": "application/json"}, "requestContext": {"http": {"method": "GET", "path": "/health", "protocol": "HTTP/1.1"}, "requestId": "test-request", "time": "2025-10-17T21:10:00Z"}, "body": null, "isBase64Encoded": false}

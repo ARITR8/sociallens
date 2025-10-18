@@ -1,0 +1,12 @@
+{
+  "rawPath": "/health",
+  "requestContext": {
+    "http": {
+      "method": "GET",
+      "path": "/health"
+    }
+  },
+  "headers": {
+    "host": "lambda-url"
+  }
+}

@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  publisher_api:
+    build: .
+    container_name: publisher_api
+    ports:
+      - "8002:8000"  # Different port from other services
+    environment:
+      # Database settings
+      - POSTGRES_HOST=publisher_db
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=newsettler
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_SCHEMA=publisher
+      
+      # WordPress settings
+      - WP_API_URL=${WP_API_URL}
+      - WP_USERNAME=${WP_USERNAME}
+      - WP_APP_PASSWORD=${WP_APP_PASSWORD}
+      
+      # LLM settings
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4-turbo-preview}
+      
+      # Service settings
+      - LOG_LEVEL=INFO
+      - ENABLE_METRICS=true
+    networks:
+      - publisher_network
+      - newsettler_network  # Shared network for inter-service communication
+    depends_on:
+      publisher_db:
+        condition: service_healthy
+    command: >
+      sh -c "alembic upgrade head && 
+             uvicorn main:app --host 0.0.0.0 --port 8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 20s
+    restart: unless-stopped
+
+  publisher_db:
+    image: postgres:14-alpine
+    container_name: publisher_db
+    environment:
+      - POSTGRES_DB=newsettler
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    volumes:
+      - publisher_db_data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"  # Different port from other services
+    networks:
+      - publisher_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d newsettler"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+volumes:
+  publisher_db_data:
+    name: publisher_db_data
+
+networks:
+  publisher_network:
+    name: publisher_network
+    driver: bridge
+  newsettler_network:
+    name: newsettler_network
+    external: true  # This network should be created separately to connect all services
