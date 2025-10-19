@@ -1,7 +1,7 @@
 # SocialLens 🔍
 ### AI-Powered Multi-Platform Social Media Intelligence
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Test%20Now-00D4AA?style=for-the-badge&logo=aws)](https://sociallens-demo.s3-website-us-east-1.amazonaws.com)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Test%20Now-00D4AA?style=for-the-badge&logo=aws)](http://newsettler-chat-frontend.s3-website-us-east-1.amazonaws.com/)
 [![AWS](https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
@@ -12,7 +12,7 @@
 
 ## 🎯 Live Demo
 
-**🚀 [Test SocialLens Now](https://sociallens-demo.s3-website-us-east-1.amazonaws.com)**
+**🚀 [Test SocialLens Now](http://newsettler-chat-frontend.s3-website-us-east-1.amazonaws.com/)**
 
 ### Currently Demo-Ready - Reddit Chat Integration:
 - **"Show me hot posts from r/programming"**
@@ -321,8 +321,8 @@ GET /api/v1/reddit/posts/{subreddit}?limit=5&mode=hot
 ### **Local Development**
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/newsettler.git
-cd newsettler
+git clone https://github.com/ARITR8/sociallens.git
+cd sociallens
 
 # Copy environment template
 cp .env.template .env
@@ -491,9 +491,26 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support & Contact
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/newsettler/issues)
-- **Documentation**: [Wiki](https://github.com/yourusername/newsettler/wiki)
+- **Issues**: [GitHub Issues](https://github.com/ARITR8/sociallens/issues)
+- **Documentation**: [Wiki](https://github.com/ARITR8/sociallens/wiki)
 - **Email**: your.email@example.com
+
+---
+
+## 🚀 Try SocialLens
+
+### **Live Demo**
+- **🌐 [Test SocialLens Now](http://newsettler-chat-frontend.s3-website-us-east-1.amazonaws.com/)** - Interactive chat interface
+- **📁 [Source Code](https://github.com/ARITR8/sociallens)** - Complete project repository
+- **📋 [API Documentation](http://newsettler-chat-frontend.s3-website-us-east-1.amazonaws.com/)** - RESTful API endpoints
+- **🏗️ [Architecture Guide](README.md#architecture-overview)** - Technical architecture details
+- **🎥 Demo Video** - 3-minute project walkthrough (uploaded separately)
+
+### **Quick Start Commands**
+Try these commands in the live demo:
+- `"Show me the hottest post from r/programming"`
+- `"What's trending in r/MachineLearning?"`
+- `"Summarize the top post from r/webdev"`
 
 ---
 
@@ -501,6 +518,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with ❤️ for the global social media community**
 
-[⭐ Star this repo](https://github.com/yourusername/sociallens) | [🐛 Report Bug](https://github.com/yourusername/sociallens/issues) | [💡 Request Feature](https://github.com/yourusername/sociallens/issues)
+[⭐ Star this repo](https://github.com/ARITR8/sociallens) | [🐛 Report Bug](https://github.com/ARITR8/sociallens/issues) | [💡 Request Feature](https://github.com/ARITR8/sociallens/issues)
 
 </div>
